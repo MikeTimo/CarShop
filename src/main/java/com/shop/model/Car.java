@@ -12,7 +12,7 @@ public class Car {
     private String exteriorColor;
     private String interiorColor;
     private Double engine;
-    private String driveTrain;
+    private DriveTrain driveTrain;
     private Double price;
     private FuelType fuelType;
     private Double kilometres;
@@ -20,7 +20,7 @@ public class Car {
     public Car() {
     }
 
-    public Car(Long id, String make, String model, BodyType bodyType, LocalDate date, TransmissionType transmissionType, String exteriorColor, String interiorColor, Double engine, String driveTrain, Double price, FuelType fuelType, Double kilometres) {
+    public Car(Long id, String make, String model, BodyType bodyType, LocalDate date, TransmissionType transmissionType, String exteriorColor, String interiorColor, Double engine, DriveTrain driveTrain, Double price, FuelType fuelType, Double kilometres) {
         this.id = id;
         this.make = make;
         this.model = model;
@@ -108,11 +108,11 @@ public class Car {
         this.engine = engine;
     }
 
-    public String getDriveTrain() {
+    public DriveTrain getDriveTrain() {
         return driveTrain;
     }
 
-    public void setDriveTrain(String driveTrain) {
+    public void setDriveTrain(DriveTrain driveTrain) {
         this.driveTrain = driveTrain;
     }
 

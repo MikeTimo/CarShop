@@ -7,5 +7,5 @@ public enum BodyType {
     HATCHBACK,
     CONVERTIBLE,
     MINIVAN,
-    PICKUPTRUCK
+    PICKUP
 }

@@ -1,20 +1,54 @@
 package com.shop.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "car")
 public class Car {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "make")
     private String make;
+
+    @Column(name = "model")
     private String model;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "bodyType")
     private BodyType bodyType;
+
+    @Column(name = "prodDate")
     private LocalDate date;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "transmissionType")
     private TransmissionType transmissionType;
+
+    @Column(name = "exteriorColor")
     private String exteriorColor;
+
+    @Column(name = "interiorColor")
     private String interiorColor;
+
+    @Column(name = "engine")
     private Double engine;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "driveTrain")
     private DriveTrain driveTrain;
+
+    @Column(name = "price")
     private Double price;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "fuelType")
     private FuelType fuelType;
+
+    @Column(name = "kilometres")
     private Double kilometres;
 
     public Car() {

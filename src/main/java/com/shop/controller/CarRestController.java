@@ -42,7 +42,8 @@ public class CarRestController {
         return carService.getCar(id);
     }
 
-    @GetMapping("/cars/{id}")
+    @DeleteMapping("/cars/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public void deleteCar(@PathVariable Long id) {
         carService.deleteCar(id);
     }

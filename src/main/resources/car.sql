@@ -24,7 +24,7 @@ CREATE TABLE car
     ENGINE = InnoDB
     DEFAULT CHARACTER SET = utf8;
 
-insert into car(make, model, bodyType, prodDate, transmissionType, exteriorColor, interiorColor, engine, driveTrain, price, fuelType, kilometres)
+insert into car(make, model, bodyType, prod_date, transmissionType, exteriorColor, interiorColor, engine, driveTrain, price, fuelType, kilometres)
 values ('Mazda', '3', 'SEDAN', '2010-01-01', 'AUTOMATIC', 'Red', 'Black', 1.4, 'FF', 3100, 'GASOLINE', 42500)
      , ('Volvo', 'XC90', 'HATCHBACK', '2011-01-01', 'AUTOMATIC', 'Grey', 'White', 2.0, 'FOURWD', 7000, 'DIESEL', 27000)
      , ('BMW', 'Z4', 'CONVERTIBLE', '2012-01-01', 'AUTOMATIC', 'White', 'Black', 3.0, 'MR', 8200, 'GASOLINE', 31250)

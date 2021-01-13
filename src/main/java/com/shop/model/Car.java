@@ -21,7 +21,7 @@ public class Car {
     @Column(name = "body_type")
     private BodyType bodyType;
 
-    @Column(name = "prodDate")
+    @Column(name = "prod_date")
     private LocalDate date;
 
     @Enumerated(EnumType.STRING)

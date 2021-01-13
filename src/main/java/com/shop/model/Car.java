@@ -18,34 +18,34 @@ public class Car {
     private String model;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "bodyType")
+    @Column(name = "body_type")
     private BodyType bodyType;
 
     @Column(name = "prodDate")
     private LocalDate date;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "transmissionType")
+    @Column(name = "transmission_type")
     private TransmissionType transmissionType;
 
-    @Column(name = "exteriorColor")
+    @Column(name = "exterior_color")
     private String exteriorColor;
 
-    @Column(name = "interiorColor")
+    @Column(name = "interior_color")
     private String interiorColor;
 
     @Column(name = "engine")
     private Double engine;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "driveTrain")
+    @Column(name = "drivetrain")
     private DriveTrain driveTrain;
 
     @Column(name = "price")
     private Double price;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "fuelType")
+    @Column(name = "fuel_type")
     private FuelType fuelType;
 
     @Column(name = "kilometres")

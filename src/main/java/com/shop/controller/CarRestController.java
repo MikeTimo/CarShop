@@ -38,8 +38,14 @@ public class CarRestController {
 
     @GetMapping("cars/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Car getCAr(@PathVariable Long id) {
+    public Car getCar(@PathVariable Long id) {
         return carService.getCar(id);
+    }
+
+    @PutMapping ("/cars/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateCar(@PathVariable Long id, @RequestBody Car car) {
+        carService.updateCar(id, car);
     }
 
     @DeleteMapping("/cars/{id}")

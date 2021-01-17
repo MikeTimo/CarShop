@@ -1,5 +1,6 @@
 package com.shop.service;
 
+import com.shop.exception.BadRequestException;
 import com.shop.model.Car;
 import com.shop.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,20 @@ public class CarServiceImpl implements CarService{
 
     @Override
     public void deleteCar(Long id) {
-        carRepository.deleteById(id);
+        if (carRepository.existsById(id)) {
+            carRepository.deleteById(id);
+        } else {
+            throw new BadRequestException("Неверный ID");
+        }
+    }
+
+    @Override
+    public void updateCar(Long id, Car car) {
+        if (carRepository.existsById(id)) {
+            carRepository.save(car);
+        } else {
+            throw new BadRequestException("Неверный ID");
+        }
     }
 
     @Override
@@ -33,6 +47,10 @@ public class CarServiceImpl implements CarService{
 
     @Override
     public Car getCar(Long id) {
-        return carRepository.findById(id).get();
+        if (carRepository.existsById(id)) {
+            return carRepository.findById(id).get();
+        } else {
+            throw new BadRequestException("Неверный ID");
+        }
     }
 }

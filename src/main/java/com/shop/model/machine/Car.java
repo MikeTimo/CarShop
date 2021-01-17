@@ -1,4 +1,4 @@
-package com.shop.model;
+package com.shop.model.machine;
 
 import javax.persistence.*;
 import java.time.LocalDate;

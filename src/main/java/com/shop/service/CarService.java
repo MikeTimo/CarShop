@@ -1,6 +1,6 @@
 package com.shop.service;
 
-import com.shop.model.Car;
+import com.shop.model.machine.Car;
 
 import java.util.List;
 

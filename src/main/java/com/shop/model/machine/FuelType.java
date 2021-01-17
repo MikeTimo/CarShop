@@ -1,4 +1,4 @@
-package com.shop.model;
+package com.shop.model.machine;
 
 public enum FuelType {
     GASOLINE,

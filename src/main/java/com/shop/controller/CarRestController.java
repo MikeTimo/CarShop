@@ -1,6 +1,6 @@
 package com.shop.controller;
 
-import com.shop.model.Car;
+import com.shop.model.machine.Car;
 import com.shop.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

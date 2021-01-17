@@ -1,7 +1,7 @@
 package com.shop.service;
 
 import com.shop.exception.BadRequestException;
-import com.shop.model.Car;
+import com.shop.model.machine.Car;
 import com.shop.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

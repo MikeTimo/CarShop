@@ -1,9 +1,11 @@
 package com.shop.service;
 
 import com.shop.exception.BadRequestException;
+import com.shop.model.machine.BodyType;
 import com.shop.model.machine.Car;
 import com.shop.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,8 +20,8 @@ public class CarServiceImpl implements CarService{
     }
 
     @Override
-    public List<Car> allCars() {
-        return carRepository.findAll();
+    public List<Car> allCars(Specification<Car> specification) {
+        return carRepository.findAll(specification);
     }
 
     @Override
@@ -52,5 +54,20 @@ public class CarServiceImpl implements CarService{
         } else {
             throw new BadRequestException("Неверный ID");
         }
+    }
+
+    @Override
+    public Specification<Car> filterByMake(String make) {
+        return ((root, criteriaQuery, criteriaBuilder) -> make == null ? null : criteriaBuilder.like(root.get("make"), "%" + make + "%"));
+    }
+
+    @Override
+    public Specification<Car> filterByModel(String model) {
+        return ((root, criteriaQuery, criteriaBuilder) -> model == null ? null : criteriaBuilder.like(root.get("model"), "%" + model + "%"));
+    }
+
+    @Override
+    public Specification<Car> filterByBodyType(BodyType bodyType) {
+        return ((root, criteriaQuery, criteriaBuilder) -> bodyType == null ? null : criteriaBuilder.equal(root.get("body_type"), bodyType));
     }
 }

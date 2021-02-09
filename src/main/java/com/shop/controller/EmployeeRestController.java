@@ -1,8 +1,9 @@
 package com.shop.controller;
 
-import com.shop.model.machine.Car;
 import com.shop.model.workers.Employee;
 import com.shop.service.EmployeeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.List;
 @RequestMapping("/rest")
 public class EmployeeRestController {
     private EmployeeService employeeService;
+    private static final Logger log = LoggerFactory.getLogger(EmployeeRestController.class);
 
     @Autowired
     public void setEmployeeService(EmployeeService employeeService) {
@@ -43,7 +45,7 @@ public class EmployeeRestController {
         return employeeService.getEmployee(id);
     }
 
-    @PutMapping ("/employees/{id}")
+    @PutMapping("/employees/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
         employeeService.updateEmployee(id, employee);

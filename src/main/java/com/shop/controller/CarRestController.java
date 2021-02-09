@@ -5,6 +5,8 @@ import com.shop.model.machine.Car;
 import com.shop.model.machine.FuelType;
 import com.shop.model.machine.TransmissionType;
 import com.shop.service.CarService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.HttpStatus;
@@ -12,10 +14,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/rest")
 public class CarRestController {
     private CarService carService;
+    private static final Logger log = LoggerFactory.getLogger(CarRestController.class);
 
     @Autowired
     public void setCarService(CarService carService) {
@@ -62,7 +66,7 @@ public class CarRestController {
         return carService.getCar(id);
     }
 
-    @PutMapping ("/cars/{id}")
+    @PutMapping("/cars/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void updateCar(@PathVariable Long id, @RequestBody Car car) {
         carService.updateCar(id, car);

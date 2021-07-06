@@ -1,2 +1,4 @@
-package com.shop.exception;public class ExceptionHandler {
+package com.shop.exception;
+
+public class ExceptionHandler {
 }
